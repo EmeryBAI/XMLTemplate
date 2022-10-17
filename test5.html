@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using the XMLHttpRequest Object</h2>
+<input
+       type="file"
+       class="read-local-txt-input"
+       id="readTxt"
+       accept=".txt">
+ </input>
+
+
+<script>
+function getInputTxt() {
+    this.txtDom = document.getElementById('readTxt');
+    this.txtDom.addEventListener('change', this.updateTxt, false);
+};
+
+function updateTxt(e) {
+    let selectedFile = document.getElementById('readTxt').files[0];
+    let reader = new FileReader(); // 读取TXT起重要作用的
+    reader.readAsText(selectedFile);
+    reader.onload = oFREvent => { // 读取完毕从中取值
+        let pointsTxt = oFREvent.target.result;
+        console.log('pointsTxt', pointsTxt) // 获取到的TXT文件
+    };
+    e.target.value = null;
+};
+// 一定要记得最后一处监听器哦
+function removeTxtDomListener() {
+    this.txtDom.removeEventListener('change', this.updateTxt, false);
+};
+
+
+</script>
+
+</body>
+</html>
+
+
+<!-- 如果把恋爱关系比作一场舞台剧，那长久的陪伴与交流为背景的灯光音乐，亲密的关系为曼妙的舞蹈表演，将这两点做好，舞台剧
+便集齐其基本的要素。人物之间的契合度决定了这场舞台剧的演出时长，而最终这场舞台剧是否成功，是否值得传播于后人，则是
+在于：双方有没有在这段关系中，收获真正的成长。是否在相互依偎，相互陪伴中，拥有突破自己舒适区的勇气与力量。 -->
