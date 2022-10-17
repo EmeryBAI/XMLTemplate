@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<employes>
+  <employe id='1' attendence='经理'>
+    <number>1001</number>
+    <name>Mr. chen</name>
+    <object>PHP</object>
+    <tel>84971547</tel>
+    <address>chang chun</address>
+    <e_mail>cak**@sina.com</e_mail>
+  </employe>
+</employes>
