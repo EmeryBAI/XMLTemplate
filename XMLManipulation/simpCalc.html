@@ -1,0 +1,107 @@
+<html>
+<body>
+<h1>Simple calculation generation</h1>
+<div>
+<form id="questionType" method="GET">
+    
+       <input type="radio" name="priority" value="beginner"> beginner
+       <input type="radio" name="priority" value="Intermedia"> Intermedia
+       <input type="radio" name="priority" value="Professional"> Professional
+
+</form>
+<div id = "beginnerContent">
+    <input type="button" name = "Submit" value="Submit" onClick = "giveTable();"/>
+    </div>
+    <div>
+        <input type="text" id="shop">
+        <input type="text" id="cellPhone">
+        <button id="add">add</button>
+    </div>
+    <table id="BTable">
+        <thead>
+            <tr>
+                <th>Variable Name</th>
+                <th>Variable Number</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+
+        </tbody>
+    </table>
+    <div>
+        <p>Please input the <strong>question text</strong> in the below box.</p>
+        <textarea id = "question text" rows="3" cols="20">
+        
+        </textarea>
+        <p>Please input the <strong>question answer</strong> in the below box.</p>
+        <textarea id = "question answer" rows="3" cols="20">
+        
+        </textarea>
+    </div>
+
+    <input type="button" value="Confirm" id = "Confirm" onclick = "BGenerateXML()">
+</div>
+<div>
+    <textarea name="output" id="output" cols="30" rows="10"></textarea>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script  src = "xmlReader.js"></script>
+<script >
+    //-------------------------------------------display不同table
+    var beginnerContent = document.getElementById("beginnerContent");
+    beginnerContent.style.display = 'none';
+    function giveTable(){
+        var ident =$("input[name = 'priority']:checked").val();
+        if(ident=='beginner'){   //注意判断身份中用单引号
+            beginnerContent.style.display = 'block';
+            var btn = document.getElementById("Confirm");
+            btn.addEventListener('click', function (ev) {
+               BData = getTableContent("BTable");
+               BQuestionText = document.getElementById("question text");
+               BQuestionAnswer = document.getElementById("question answer");
+                }, false);
+                
+        } 
+        // else if(){
+
+        // }
+        else{
+            alert("Please select one option.");
+        }
+    }
+   
+
+let table = document.getElementById("BTable");
+        let tHead = table.tHead;
+        let tBody = table.tBodies[0];
+        let shop = document.getElementById("shop");
+        let cellPhone = document.getElementById("cellPhone");
+        let add = document.getElementById("add");
+        add.onclick = function () {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerHTML = shop.value;
+            tr.appendChild(td1);
+
+            let td2 = document.createElement("td");
+            td2.innerHTML = cellPhone.value;
+            tr.appendChild(td2);
+            tBody.appendChild(tr);
+        }
+
+//-------------------------------------------监听信号，处理html数据
+BData = getTableContent("BTable")
+
+//--------------------------------------------导入XML，更改DOM
+function BGenerateXML(){
+            question
+        }
+//--------------------------------------------输出到行box
+        
+</script>
+
+</body>
+</html>
