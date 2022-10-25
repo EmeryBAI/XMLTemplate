@@ -1,0 +1,264 @@
+<html>
+<body>
+  <h1>Simple calculation generation</h1>
+
+
+
+<h4>Introduction to the simple Calculation Question:</h4>
+<a href="https://eq1302.cs.cityu.edu.hk/question/preview.php?id=4049&amp;cmid=782">See an example here</a>
+
+<ol>
+  <li>
+    Question title: A question title is used to identify a question in a question bank. As the example below shows, a question is titled as FillinBlankQ-SimpleCalc, the question is represented by its question title.
+    <img src = "simpCalcImg//question title.png" >
+  </li>
+
+  <li> Question text:
+    In question text for simple calculation questions, normally numbers or mathmatical expressions are included. For example:</li>
+    <img src= "simpCalcImg//questionText.png">
+  <li>
+  <p>Question answer: question answer will check the result of students&#39; inputs. For example:
+This is an correct answer:
+&lt;!--correct.png---&gt;
+This is a wrong answer:
+&lt;!--wrong.png---&gt;</p></li>
+<li><p>Advanced function-- Randomization:
+Suppose there a question text with some numbers or expressions . Furthermore, we can generate different question variants <strong>randomly</strong> for the question. This means that different students may get different versions of the question generated with diverse numbers or expressions.  Let&#39;s take the question generated in the above as an example. 
+&lt;!--2question.png---&gt;
+The randomization can be used in higher priority. For details, please refer to the <strong>Question Generation Priority</strong>.</p></li></ol>
+
+<h4>Question Generation Priority</h4>
+
+<p>To make ones get familiar to STACK question step by step, we generate three priorities, from low to high:  Beginner, Intermedia, Professional.
+Here is the difference:</p>
+<ul>
+  <li>
+    Beginner
+    Write explicit question text and answers.
+  </li>
+  <li>
+    Intermedia
+Use the advanced randomization function, but the range of numbers can not be controlled by users.
+  </li>
+  <li>
+    Professional
+Use the advanced randomization function, users can customize the range of random numbers.
+  </li>
+</ul>
+
+  <div>
+    <form id="questionLevel" method="GET">
+      <input type="radio" name="priority" value="beginner" /> Beginner
+      <input type="radio" name="priority" value="Intermedia" /> Intermedia
+      <input type="radio" name="priority" value="Professional" /> Professional
+    </form>
+    <div>
+      <input type="button" name="Submit" value="Submit" onClick="display();" />
+    </div>
+
+    <div id="01">
+      <p>Please input the <strong>question title</strong> in the below box.</p>
+      <textarea id="question title" rows="3" cols="20"> </textarea>
+      <p>Please input the <strong>question text</strong> in the below box.</p>
+      <textarea id="question text" rows="3" cols="20"> </textarea>
+      <p>
+        Please input the <strong>question answer</strong> in the below box.
+      </p>
+      <textarea id="question answer" rows="3" cols="20"> </textarea>
+    </div>
+    <div id="02">
+      <p>
+        The number of variants you want to generate is:
+        <input type="number" id="02Num" />
+      </p>
+      <input type="text" id="shop" />
+      <input type="text" id="cellPhone" />
+      <button id="add">add</button>
+
+      <table id="ITable">
+        <thead>
+          <tr>
+            <th>Variable Name</th>
+            <th>Variable Number</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="03">
+      <p>
+        The number of variants you want to generate is:
+        <input type="number" id="03Num" />
+      </p>
+      <input type="text" id="shop2" />
+      <input type="text" id="cellPhone2" />
+      <input type="text" id="cellPhone3" />
+
+      <button id="add2">add</button>
+
+      <table id="PTable">
+        <thead>
+          <tr>
+            <th>Variable Name</th>
+            <th>Variable Lower Bound</th>
+            <th>Variable Upper Bound</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <input type="button" value="Confirm" id="Confirm" onclick="BGenerateXML()" />
+
+    <div>
+      <textarea name="output" id="output" cols="30" rows="10"></textarea>
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="xmlReader.js"></script>
+  <script>
+    //-------------------------------------------submit 后display不同table
+    var basicContent = document.getElementById("01");
+    var tableContent = document.getElementById("02");
+    var tableContent2 = document.getElementById("03");
+
+    var ITable = document.getElementById("ITable");
+    var Confirm = document.getElementById("Confirm");
+    var output = document.getElementById("output");
+
+    basicContent.style.display = "none";
+    tableContent.style.display = "none";
+    tableContent2.style.display = "none";
+    ITable.style.display = "none";
+    Confirm.style.display = "none";
+    output.style.display = "none";
+    function display() {
+      var ident = $("input[name = 'priority']:checked").val();
+      if (ident == "null") alert("Please select an option");
+      else {
+        basicContent.style.display = "block";
+        Confirm.style.display = "block";
+        if (ident == "Intermedia") {
+          //注意判断身份中用单引号
+          tableContent.style.display = "block";
+          let ITable = document.getElementById("ITable");
+          ITable.style.display = "block";
+
+          
+        } else if (ident == "Professional") {
+          tableContent2.style.display = "block";
+        }
+      }
+    }
+
+    //-----------------------------Table 的基本操作
+    let table = document.getElementById("ITable");
+    let tHead = table.tHead;
+    let tBody = table.tBodies[0];
+    let shop = document.getElementById("shop");
+    let cellPhone = document.getElementById("cellPhone");
+    let add = document.getElementById("add");
+    add.onclick = function () {
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerHTML = shop.value;
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      td2.innerHTML = cellPhone.value;
+      tr.appendChild(td2);
+      tBody.appendChild(tr);
+    };
+
+    let table2 = document.getElementById("PTable");
+    let tHead2 = table2.tHead;
+    let tBody2 = table2.tBodies[0];
+    let shop2 = document.getElementById("shop2");
+    let cellPhone2 = document.getElementById("cellPhone2");
+    let cellPhone3 = document.getElementById("cellPhone3");
+
+    let add2 = document.getElementById("add2");
+    add2.onclick = function () {
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerHTML = shop2.value;
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      td2.innerHTML = cellPhone2.value;
+      tr.appendChild(td2);
+
+      let td3 = document.createElement("td");
+      td3.innerHTML = cellPhone3.value;
+      tr.appendChild(td3);
+
+      tBody2.appendChild(tr);
+    };
+
+    //-------------------------------------------TODO:解决onclick事件
+    Confirm.onclick = function () {
+      var ident = $("input[name = 'priority']:checked").val();
+      document.getElementById("output").style.display = "block";
+      xmlDoc = getXMLDOM("simpCalc.xml");
+     
+        let questionText = document.getElementById("question text");
+        let questionAns = document.getElementById("question answer");
+        let questionTitle = document.getElementById("question title");
+        let questionVariableContent = "";
+        let questionNoteContent = "";
+        questionTextContent = questionText.value;
+        questionAnsContent = questionAns.value;
+        questionTitleContent = questionTitle.value;
+
+      if (ident == "beginner") {
+        
+       
+      }
+      else if (ident == "Intermedia") {//TODO:增加question note，设置variable 和random极限
+        let questionNum = parseInt(document.getElementById("02Num").value);
+        // let ITable = document.getElementById("ITable");
+        let tData = getTableContent("ITable")
+        let variableNum = tData.length;
+        let randUpperBound = questionNum*3/(variableNum-1);
+        questionVariableContent = "randNum : rand("+ randUpperBound+");\n";
+        for (let i = 1; i < variableNum; i++) {
+          questionVariableContent += tData[i][0] +": "+ tData[i][1]+"+ "+ "randNum\n";
+          questionNoteContent += "{@"+tData[i][0]+"@} "
+      }
+        
+      } else {
+        //TODO:
+        let questionNum = parseInt(document.getElementById("02Num").value);
+        let tData = getTableContent("PTable");
+        let variableNum = tData.length;
+        for (let i = 1; i < variableNum; i++) {
+          questionVariableContent += tData[i][0] +": "+ tData[i][1]+"+ "+ "rand("+tData[i][2]+");\n";
+          questionNoteContent += "{@"+tData[i][0]+"@} "
+
+      }//TODO:question note 没写
+    }
+      questionVariableContent += "ta : "+questionAnsContent;
+      xmlDoc.getElementsByTagName("text")[0].childNodes[0].nodeValue = questionTitleContent;
+    xmlDoc.getElementsByTagName("text")[1].childNodes[0].nodeValue = "<![CDATA[<p></p><p>" + questionTextContent + "</p><p>[[input:ans1]] [[validation:ans1]]</p>";
+
+    xmlDoc.getElementsByTagName("questionvariables")[0].childNodes[0].nodeValue = "<text>" + questionVariableContent+"</text>";
+    xmlDoc.getElementsByTagName("questionnote")[0].childNodes[0].nodeValue = "<text>" + questionNoteContent+"</text>";
+      
+     let str = getSerialXML(xmlDoc);
+      let reg = new RegExp("<text/>","g");
+      str = str.replace(reg,"<text></text>");
+     document.getElementById("output").innerHTML = str;
+    
+   
+  }
+
+    //--------------------------------------------TODO:导入XML，更改DOM
+    
+      //--------------------------------------------TODO:输出到行box
+
+
+  </script>
+</body>
+
+</html>
