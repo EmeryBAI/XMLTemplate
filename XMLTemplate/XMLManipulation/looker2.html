@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+ 
+	<body>
+		<!-- <div id="title0" style="width:150px;height:30px;background-color: #FFE08B;" onclick="onTileClick()">标题</div> -->
+			<input type="button" id =  "title0"  onclick="onTileClick()" value="Click to see the demo">
+			<div id="content0" style="width:720px;overflow: hidden;height:150px;transition: height 0.2s;"><img src = "simpCalcImg\beginner.png"></div>
+		<script type="text/javascript">
+			var content0 = document.getElementById("content0");
+			function onTileClick() { content0.style.height = content0.offsetHeight===150 ? 0+'px' : 150+'px';}
+		</script> 
+	</body>
+	
+ 
+</html>
