@@ -37,6 +37,10 @@ function getSerialXML(xmlDoc){
     return str;
    
 }
+function xmlDownload(xmlStr,fileName){
+    var blob = new Blob([xmlStr], {type : 'text/plain'});
+    saveAs(blob, fileName);
+}
 // randLowerBound: 0;
 // randUpperBound: 20;
 // randNum: randLowerBound+rand(randUpperBound);
