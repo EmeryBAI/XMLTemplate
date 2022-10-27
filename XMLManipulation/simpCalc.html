@@ -1,5 +1,5 @@
 <html>
-//1.variable list的结构顺序要改；2.variable 要给Example 3.挑选CSS合并 4.使用{@@}不太方便
+//1.variable list的结构顺序要改；2.variable 要给Example，放在列表顶端 3.挑选CSS合并 4.使用{@@}不太方便
 <body>
   <h1>Simple calculation generation</h1>
   <div>
@@ -74,7 +74,7 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="xmlReader.js"></script>
   <script>
-    //-------------------------------------------submit 后display不同table
+    //-------------------------------------------1. submit 后display不同table
     var basicContent = document.getElementById("01");
     var tableContent = document.getElementById("02");
     var tableContent2 = document.getElementById("03");
@@ -108,13 +108,14 @@
       }
     }
 
-    //-----------------------------Table 的基本操作
     let table = document.getElementById("ITable");
     let tHead = table.tHead;
     let tBody = table.tBodies[0];
     let shop = document.getElementById("shop");
     let cellPhone = document.getElementById("cellPhone");
     let add = document.getElementById("add");
+//-----------------------------Table 的基本操作
+
     add.onclick = function () {
       let tr = document.createElement("tr");
       let td1 = document.createElement("td");
