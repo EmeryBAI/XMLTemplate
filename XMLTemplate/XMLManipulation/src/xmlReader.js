@@ -16,19 +16,7 @@ function getXMLDOM(filePath){
 
 }
 
-function getTableContent(id){
-    var mytable = document.getElementById(id);
-    var data = [];
-    for(var i=0,rows=mytable.rows.length; i<rows; i++){
-        for(var j=0,cells=mytable.rows[i].cells.length; j<cells; j++){
-            if(!data[i]){
-                data[i] = new Array();
-            }
-            data[i][j] = mytable.rows[i].cells[j].innerHTML;
-        }
-    }
-    return data;
-}
+
 
 function getSerialXML(xmlDoc){
     const s = new XMLSerializer();

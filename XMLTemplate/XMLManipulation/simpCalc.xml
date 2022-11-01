@@ -18,13 +18,12 @@
     <stackversion>
       <text>2020120600</text>
     </stackversion>
-    <questionvariables>
-      <!-- <text>h</text> -->
+    <questionvariables><text>1</text> 
     </questionvariables>
     <specificfeedback format="html">
       <text>[[feedback:prt1]]</text>
     </specificfeedback>
-    <questionnote>
+    <questionnote><text>questionnote</text>
       <!-- <text>{@ta@} = {@var1@} +{@var2@}</text> -->
     </questionnote>
     <questionsimplify>1</questionsimplify>
@@ -96,8 +95,6 @@
           <text></text>
         </falsefeedback>
       </node>
-    </prt>
-    
-  </question>
+    </prt></question>
 
 </quiz>
