@@ -36,7 +36,7 @@ tr:nth-child(even) {
   <p class="guide">2. Read two demos for this kind of question, please read and then fill related settings.</p>
   <img src="./simpCalcImg/simpCalcDemo.png" alt="simpCalcDemo" style="height: 800px;">
   <input type="button" value = "Click to show more detailed information." onclick="detailedInfoClick()">
-  <div id = "detailedInfo"  style="width:720px;overflow: hidden;height:0px;transition: height 0.2s;">
+  <div id = "detailedInfo"  style="width:720px;overflow: hidden;height:0px;transition: height 0.2s;margin:auto">
 
   
 <hr>
@@ -63,12 +63,14 @@ This is a wrong answer:
 <li><p>Advanced function-- Randomization:
 Suppose there a question text with some numbers or expressions . Furthermore, we can generate different question variants <strong>randomly</strong> for the question. This means that different students may get different versions of the question generated with diverse numbers or expressions.  Let&#39;s take the question generated in the above as an example. 
 <img src= "simpCalcImg//2question.png" style="height: 105px">
-The randomization can be used in higher priority. For details, please refer to the <strong>Question Generation Priority</strong>.</p></li></ol>
-<h4>Question Generation Priority</h4>
+<input type="button" value = "Click to hide it." onclick="detailedInfoClick()">
+
+<!-- The randomization can be used in higher priority. For details, please refer to the <strong>Question Generation Priority</strong>.</p></li></ol> -->
+<!-- <h4>Question Generation Priority</h4>
 
 <p>To make ones get familiar to STACK question step by step, we generate three priorities, from low to high:  Beginner, Intermedia, Professional.
-Here is the difference:</p>
-<ul>
+Here is the difference:</p> -->
+<!-- <ul>
   <li>
     Beginner:
     Write explicit question text and answers.
@@ -82,7 +84,7 @@ Use the advanced randomization function, but the range of numbers can not be con
     Professional:
 Use the advanced randomization function, users can customize the range of random numbers.
   </li>
-</ul>
+</ul> -->
 
 </div>
 
@@ -201,7 +203,7 @@ Use the advanced randomization function, users can customize the range of random
 
     
     <input type="button" value="Click to generate XML file" id="Confirm" style="display: inline;"/>
-    <span id ="scrollHint" style="display: none;" >(XML file generated successful!,please scroll down to see more hint.)</span>
+    <span id ="scrollHint" style="display: none; color: red;;" >(XML file generated successful!,please scroll down to see more hints.)</span>
     <!-- <div id = "xmlImportGuide" name = "guide">
       <p>Please copy the xml code below and create a new file with the suffix xml on your computer. Paste the code into the new file.
         <img src = "simpCalcImg/xmlFile.png">
@@ -241,7 +243,7 @@ Use the advanced randomization function, users can customize the range of random
   <script>
     //-----------------------------------------------------------------------------------------------默认值
     var detailedInfo = document.getElementById("detailedInfo");
-		function detailedInfoClick() { detailedInfo.style.height = detailedInfo.offsetHeight===1100 ? 0+'px' : 1100+'px';}
+		function detailedInfoClick() { detailedInfo.style.height = detailedInfo.offsetHeight===1000 ? 0+'px' : 1000+'px';}
     var basicContent = document.getElementById("01");
     var tableContent = document.getElementById("02");
     var tableContent2 = document.getElementById("03");
