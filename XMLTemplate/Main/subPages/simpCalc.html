@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table{
+        table-layout: fixed !important;
+        width: fit-content;
+    }
+    table input{
+        width: 100px;
+
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accounts Page - Dashboard Template</title>
+
+    <!--
+
+    Template 2108 Dashboard
+
+	http://www.tooplate.com/view/2108-dashboard
+
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body class="bg03">
+    <div class="container">
+        <!-- bars -->
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                    <a class="navbar-brand" href="index.html">
+                        <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
+                        <h1 class="tm-site-title mb-0">Simple Calculation question</h1>
+                    </a>
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home
+                                    
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Reports
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Daily Report</a>
+                                    <a class="dropdown-item" href="#">Weekly Report</a>
+                                    <a class="dropdown-item" href="index.html">Yearly Report</a>
+                                </div>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">Read More</a>
+                                <span class="sr-only">(current)</span>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="products.html">Create with Demo1</a>
+                            </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Create with Demo2</a>
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Settings
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Billing</a>
+                                    <a class="dropdown-item" href="#">Customize</a>
+                                </div>
+                            </li> -->
+                        </ul>
+                        <!-- <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex" href="login.html">
+                                    <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul> -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- block1 -->
+        <div class="row tm-content-row tm-mt-big">
+            <img src="./Imgs/simpCalcImg/simpCalcDemo.png" alt="" height="60%" style="display:block">
+        </div>
+        <div class="row tm-content-row tm-mt-big">
+            <!-- block2 -->
+            <div class="tm-col tm-col-big">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title">Create question</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" class="tm-signup-form">
+                                <div class="form-group">
+                                    <label for="name" ><strong>Question title</strong></label>
+                                    <!-- <input placeholder="Vulputate Eleifend Nulla" id="name" name="name" type="text" class="form-control validate"> -->
+                                    <textarea id="question title" rows="3" cols="20" class="form-control validate"> Sample question 1</textarea>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Set Variable(s):</label>
+                                    <!-- <input placeholder="Vulputate Eleifend Nulla" id="name" name="name" type="text" class="form-control validate"> -->
+                                    <input type="radio" name ="setVariable" value = "Disable" onclick="disableList() " checked = "true">Disable</button>
+                                    <input type="radio" name ="setVariable" value = "Enable" onclick="enableList()">Enable</button>
+                                </div>
+                                <div class="form-group">
+                                    <table id="PTable" style="display: none;" class="form-control validate" >
+                                        <thead>
+                                          <tr>
+                                            <th style = "text-align: center;"><input type="button" value="+" id = "add2" class="btn btn-danger" style="width:63px"> </th>
+                                            <th>Variable Name</th>
+                                            <th>Variable Lower Bound</th>
+                                            <th>Variable Upper Bound</th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td style="text-align: center;">
+                                              <button onclick="deleteData(this)" type="button" class="btn btn-danger">-</button>
+                                            </td>
+                                            <td><input type="text" value = "var1"  ></td>
+                                            <td><input type="number" value="10" ></td>
+                                            <td><input type="number" value = "20" ></td>
+                                           
+                                          </tr>
+                                          <tr>
+                                            <td style="text-align: center;">
+                                              <button onclick="deleteData(this)" type="button" class="btn btn-danger">-</button>
+                                            </td>
+                                            <td><input type="text" value = "var2"></td>
+                                            <td><input type="number" value="10"></td>
+                                            <td><input type="number" value = "30"></td>
+                                            
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"><strong>Question text</strong></label>
+                                    <textarea id="question text" rows="3" cols="20" class="form-control validate">Given 15 and 17, please give a result after addition: </textarea>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"><strong>Question answer</strong> in the below box.</label>
+                                    <textarea id="question answer" rows="3" cols="20"  class="form-control validate">32 </textarea>
+
+                                </div>
+                                <div class="form-group" id = "questionVariants" style="display: none;">
+                                    <label for="name" >Optional:<strong>  Number of question variants </strong>to be determined: 
+                                        (If this is selected, only limited versions of questions will be deployed in Moodle system.</a>) </label>
+                                    <input type="number" id="02Num" class="form-control validate" >
+                                </div>
+                                <input type="button" value="Click to generate XML file" id="Confirm" style="display: inline;" class="form-control validate btn btn-primary"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <!-- block3 -->
+            <div class="tm-col tm-col-big" id = "demoImg">
+                <img src="./Imgs/simpCalcImg/simpleDemo1.png" id = "helpImg"alt="" height="30%" style="display:block">
+            </div>
+                </div> 
+        </div>
+        
+        <div id = "importHint" style="display: none;">
+      
+			<p class = "guide" >4. The question has been created and downloaded in a xml file.</p>
+			  <img src = "./Imgs/simpCalcImg/xmlFile.png" style="height: 50px;">
+			  <p class = "guide" >5. Then enter the setting page of the quiz you want to add, and click import.</p>
+			  <img src = "./Imgs/simpCalcImg/import.png" style="height: 300px;">
+			 <p class = "guide" >6. Select your newly created file, and the category you want to place, then import.</p> 
+			  <img src = "./Imgs/simpCalcImg/import2.png"  style="height: 300px;">
+	  
+			  <p class = "guide" >7. Then you can find the question in question bank.</p>
+			  <img src = "./Imgs/simpCalcImg/check.png"  style="height: 300px;">
+
+        
+		</div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+
+    <script src="./src/jquery-latest.js"></script>
+    <script src="./src/FileSaver.js"></script>
+    <script src="./src/xmlReader.js"></script>
+    <script src = "./src/tools.js"></script>    
+    <script>
+        function deleteData(btn){
+			var childTd = btn.parentNode;
+			var childTr = childTd.parentNode;
+			var parentTbody = childTr.parentNode;
+			parentTbody.removeChild(childTr);
+		} 
+
+    let table2 = document.getElementById("PTable");
+    let tHead2 = table2.tHead;
+    let tBody2 = table2.tBodies[0];
+    function enableList(){
+      let ident = $("input[name = 'setVariable']:checked").val();
+      if(ident == "Enable"){
+        let table2 = document.getElementById("PTable");
+        table2.style.display="table";
+        table2.style.display="table";
+
+        document.getElementById("question text").value = "Given {@var1@} and {@var2@} please give a result after addition:";
+        document.getElementById("question answer").value = "var1+var2";
+        document.getElementById("helpImg").src = "./Imgs/simpCalcImg/simpleDemo2.png";
+        document.getElementById("questionVariants").style.display = "block";
+
+      }
+      
+
+    }
+    function disableList(){
+      let ident = $("input[name = 'setVariable']:checked").val();
+      if(ident == "Disable"){
+      let table2 = document.getElementById("PTable");
+      table2.style.display="none";
+      document.getElementById("question text").value = "Given 15 and 17, please give a result after addition:";
+      document.getElementById("question answer").value = "32";
+      document.getElementById("helpImg").src = "./Imgs/simpCalcImg/simpleDemo1.png";
+      document.getElementById("questionVariants").style.display = "none";
+
+      }
+    }
+    //add in table
+    let add2 = document.getElementById("add2");
+    add2.onclick = function () {
+      let tr = document.createElement("tr");
+
+      var td4 = document.createElement("td");
+			var button4 = document.createElement("button");
+			button4.type = "button";
+			button4.className = "btn btn-danger";
+			button4.setAttribute("onclick","deleteData(this)");
+			td4.setAttribute("style","text-align: center");
+      var TextButton = document.createTextNode("-");
+			button4.appendChild(TextButton);
+      td4.appendChild(button4);
+      tr.appendChild(td4);
+
+
+      let td1 = document.createElement("td");
+      var input1 = document.createElement("input");
+      input1.type = "text";
+      td1.appendChild(input1);
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      var input2 = document.createElement("input");
+      input2.type= "number";
+      td2.appendChild(input2);
+      tr.appendChild(td2);
+      
+      let td3 = document.createElement("td");
+      var input3 = document.createElement("input");
+      input3.type= "number";
+      td3.appendChild(input3);
+      tr.appendChild(td3);
+
+     
+
+      tBody2.appendChild(tr);
+    };
+    //------------------------------------------------加载XML
+    xmlDoc = getXMLDOM("./xmlTemplate/questions-test-FillinBlankQ-SimpleCalc-20221012-1652.xml");
+    Confirm.onclick = function () {
+      var ident = $("input[name = 'setVariable']:checked").val();
+   
+        let questionText = document.getElementById("question text");
+        let questionAns = document.getElementById("question answer");
+        let questionTitle = document.getElementById("question title");
+        let questionVariableContent = "";
+        let questionNoteContent = "{@ta@}";
+        let questionNum = -1;
+        let xmlImportGuide = document.getElementById("xmlImportGuide");
+        questionTextContent = questionText.value;
+        questionAnsContent = questionAns.value;
+        questionTitleContent = questionTitle.value;
+
+      if (ident == "Disable") {
+      }
+      else {
+         questionNum = parseInt(document.getElementById("02Num").value);
+        let tData = getTableContent("PTable");
+        let variableNum = tData.length;
+        for (let i = 1; i < variableNum; i++) {
+          questionVariableContent += tData[i][1] +": "+ tData[i][2]+"+ "+ "rand("+tData[i][3]+");\n";
+          questionNoteContent += "{@"+tData[i][1]+"@} "
+      }
+     }
+      questionVariableContent += "ta : "+questionAnsContent;
+//xmlDoc 修改
+    xmlDoc.getElementsByTagName("text")[0].childNodes[0].nodeValue = questionTitleContent;
+    xmlDoc.getElementsByTagName("text")[1].childNodes[0].nodeValue = "<![CDATA[<p></p><p>" + questionTextContent + "</p><p>[[input:ans1]] [[validation:ans1]]</p>";
+    xmlDoc.getElementsByTagName("questionvariables")[0].childNodes[0].childNodes[0].nodeValue = questionVariableContent;
+    xmlDoc.getElementsByTagName("questionnote")[0].childNodes[0].childNodes[0].nodeValue = questionNoteContent;
+
+     let str = getSerialXML(xmlDoc);
+     let reg = new RegExp("<text/>","g");
+      str = str.replace(reg,"<text></text>");
+      if(questionNum!=-1){
+        var variantStr = getRandomStr(parseInt(questionNum));
+        reg = new RegExp("</question>","g");
+        str = str.replace(reg,variantStr+"</question>");
+      }
+
+    let fileName = questionTitleContent+".xml";
+    let importHint = document.getElementById("importHint");
+    importHint.style.display="block";
+
+
+    xmlDownload(str,fileName);
+    }
+    </script>
+</body>
+
+</html>
