@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table{
+        table-layout: fixed !important;
+        width: fit-content;
+        overflow: hidden;
+    }
+    table input  {
+        /* width: 100px; */
+
+    }
+    select{
+        height: 100px !important;
+    }
+  
+
+    .hint{
+        color:rgb(59, 147, 183);
+    }
+
+    .tm-mt-big{
+        background-color:rgb(232, 241, 241)
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accounts Page - Dashboard Template</title>
+
+    <!--
+
+    Template 2108 Dashboard
+
+	http://www.tooplate.com/view/2108-dashboard
+
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body class="bg03">
+    <div class="container">
+        <!-- bars -->
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                    <a class="navbar-brand" href="index.html">
+                        <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
+                        <h1 class="tm-site-title mb-0">True or False question</h1>
+                    </a>
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home
+                                <span class="sr-only">(current)</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">Read More</a>
+                            </li>
+                            
+                        </ul>
+                       
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row tm-content-row tm-mt-big" >
+            <!-- block2 -->
+            <div class="tm-col tm-col-big">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12" class = "background">
+                            <h2 class="tm-block-title">Create question</h2>
+                            <p  class="hint">Manipulate demo to create new question </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" class="tm-signup-form">
+                                <div class="form-group">
+                                    <label for="name" ><strong>Question title</strong></label>
+                                    <textarea id="question title" rows="3" cols="20" class="form-control validate"> Geology test</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="name" ><strong>Variants form</strong><p class="hint">A student get one of varaints </p> 
+                                    </label>
+                                    <table id="PTable"  style = "display: table;" class=" form-control validate" >
+                                        <thead>
+                                          <tr>
+                                            <th style = "text-align: center;"><input type="button" value="+" id = "add2" class="btn btn-danger" style="width:63px"> </th>
+                                            <th>Question Text</th>
+                                            <th>Correct answer</th>                      
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td style="text-align: center;">
+                                              <button onclick="deleteData(this)" type="button" class="btn btn-danger">-</button>
+                                            </td>
+                                            <td><textarea  rows="3" cols="20" class="form-control validate">China is the country with the most population in the world</textarea>
+                                            </td>
+                                            <td><select class="form-control validate" >
+                                                <option value="true" >true</option>
+                                                <option value="false" >false</option>
+                                                </select>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td style="text-align: center;">
+                                              <button onclick="deleteData(this)" type="button" class="btn btn-danger">-</button>
+                                            </td>
+                                            <td><textarea  rows="3" cols="20" class="form-control validate">China has the largest plain in the world</textarea>
+                                            </td>
+                                            <td><select class="form-control validate" >
+                                                <option value="false" >false</option>
+                                                <option value="true" >true</option>
+
+                                                </select>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td style="text-align: center;">
+                                              <button onclick="deleteData(this)" type="button" class="btn btn-danger">-</button>
+                                            </td>
+                                            <td><textarea  rows="3" cols="20" class="form-control validate">China is the largets country in the world</textarea>
+                                            </td>
+                                            <td><select class="form-control validate" >
+                                                <option value="false" >false</option>
+                                                <option value="true" >true</option>
+                                                
+                                                </select>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <input type="button" value="Click to generate XML file" id="Confirm" style="display: inline;" class="form-control validate btn btn-primary"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <!-- block3 -->
+            <div class="tm-col tm-col-big" id = "demoImg">
+                <!-- <img src="./Imgs/TrueFalseImg/Demo1.png" id = "helpImg"alt="" height="50%" style="display:block">
+                <img src="./Imgs/TrueFalseImg/Demo2.png" id = "helpImg"alt="" height="50%" style="display:block"> -->
+                <img src="./Imgs/TrueFalseImg/Demo3.png" id = "helpImg"alt="" height="100%" style="display:block">
+
+
+            </div>
+                </div> 
+        </div>
+        
+        <div id = "importHint" style="display: none;">
+      
+			<p class = "guide" >4. The question has been created and downloaded in a xml file.</p>
+			  <img src = "./Imgs/simpCalcImg/xmlFile.png" style="height: 50px;">
+			  <p class = "guide" >5. Then enter the setting page of the quiz you want to add, and click import.</p>
+			  <img src = "./Imgs/simpCalcImg/import.png" style="height: 300px;">
+			 <p class = "guide" >6. Select your newly created file, and the category you want to place, then import.</p> 
+			  <img src = "./Imgs/simpCalcImg/import2.png"  style="height: 300px;">
+	  
+			  <p class = "guide" >7. Then you can find the question in question bank.</p>
+			  <img src = "./Imgs/simpCalcImg/check.png"  style="height: 300px;">
+
+        
+		</div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+
+    <script src="./src/jquery-latest.js"></script>
+    <script src="./src/FileSaver.js"></script>
+    <script src="./src/xmlReader.js"></script>
+    <script src = "./src/tools.js"></script>    
+    <script>
+        let table2 = document.getElementById("PTable");
+        let tHead2 = table2.tHead;
+        let tBody2 = table2.tBodies[0];
+        //--------------------------------------------table 操作
+        function deleteData(btn){
+			var childTd = btn.parentNode;
+			var childTr = childTd.parentNode;
+			var parentTbody = childTr.parentNode;
+			parentTbody.removeChild(childTr);
+		} 
+
+    
+    
+    
+    //add in table
+    let add2 = document.getElementById("add2");
+    add2.onclick = function () {
+    let table = document.getElementById("PTable");
+    let tr = document.createElement("tr");
+    
+
+    var td4 = document.createElement("td");
+    td4.setAttribute("style","text-align: center");
+    var button4 = document.createElement("button");
+    button4.type = "button";
+    button4.className = "btn btn-danger";
+    button4.setAttribute("onclick","deleteData(this)");
+    var TextButton = document.createTextNode("-");
+	button4.appendChild(TextButton);
+      td4.appendChild(button4);
+      tr.appendChild(td4);
+
+
+      let td1 = document.createElement("td");
+      let input1 = document.createElement("textarea");
+      input1.setAttribute("rows","3");
+      input1.setAttribute("cols","20");
+    input1.className="form-control validate";
+      td1.appendChild(input1);
+      tr.appendChild(td1);
+
+    let td2 = document.createElement("td");
+    let input2 = document.createElement("select");
+    input2.className="form-control validate";
+    let opt1 = document.createElement("option");
+    opt1.setAttribute("value","true");
+    opt1.text= "true"
+    let opt2 = document.createElement("option");
+    opt2.setAttribute("value","false");
+    opt2.text= "false";
+    input2.appendChild(opt1);
+    input2.appendChild(opt2);
+    td2.appendChild(input2);
+
+    tr.appendChild(td2);
+
+    tBody2.appendChild(tr);
+    };
+    //------------------------------------------------加载XML
+    xmlDoc = getXMLDOM("./xmlTemplate/TrueFalse.xml");
+    Confirm.onclick = function () {
+   
+//xml信息
+        let questionTitle = document.getElementById("question title");
+        let questionNum = table2.rows.length-1;
+        tableData = getTableContent("PTable");
+
+//xml 变量
+        let questionTitleContent = questionTitle.value;
+        let questionNoteContent = "{@randNum@}";
+        let questionTextContent = "{@var1[randNum]@} \n ";
+        let questionTextList = "[";
+        let questionAnsList = "[ ";
+        let questionVariableContent="randNum: rand("+questionNum+")+1;\n var1:";
+
+        for(let i = 0;i<questionNum;i++){
+            questionTextList += "\""+tableData[i+1][1]+"\"";
+            questionAnsList += "\""+tableData[i+1][2]+"\"";
+
+            if(i != questionNum-1){
+                questionTextList += ",";
+                questionAnsList += ",";
+            }
+        }
+        
+        questionAnsList+=" ]";
+        questionTextList +=" ]";
+        questionVariableContent +=questionTextList+";\n"+"ansList:"+questionAnsList+";\n"+"ta:ansList[randNum];"     
+      
+//xmlDoc 合并
+    console.dir(xmlDoc.getElementsByTagName("questionvariables")[0].childNodes[0]);
+    xmlDoc.getElementsByTagName("text")[0].childNodes[0].nodeValue = questionTitleContent;
+    xmlDoc.getElementsByTagName("text")[1].childNodes[0].nodeValue = "<p></p><p>" + questionTextContent + "</p><p>[[input:ans1]] [[validation:ans1]]</p>";
+    xmlDoc.getElementsByTagName("questionvariables")[0].childNodes[0].innerHTML = questionVariableContent;
+    xmlDoc.getElementsByTagName("questionnote")[0].childNodes[0].nodeValue = questionNoteContent;
+
+     let str = getSerialXML(xmlDoc);
+    //  let reg = new RegExp("<text/>","g");
+    // str = str.replace(reg,"<text></text>");
+
+    let fileName = questionTitleContent+".xml";
+    let importHint = document.getElementById("importHint");
+    importHint.style.display="block";
+
+
+    xmlDownload(str,fileName);
+    }
+    </script>
+</body>
+
+</html>

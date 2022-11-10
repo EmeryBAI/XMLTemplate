@@ -6,7 +6,7 @@
       <text>True/false question</text>
     </name>
     <questiontext format="html">
-      <text><![CDATA[<p></p><p><span style="font-size: 14.9204px;">This is the place to input the question text. Please replace it with your question text.</span></p><p>[[input:ans1]] [[validation:ans1]]</p>]]></text>
+      <text><![CDATA[<p></p><p><span style="font-size: 15px;">{@var1[randNum]@}</span></p><p><span style="font-size: 0.9375rem;">[[input:ans1]] [[validation:ans1]]</span><br></p>]]></text>
     </questiontext>
     <generalfeedback format="html">
       <text></text>
@@ -18,15 +18,16 @@
     <stackversion>
       <text>2020120600</text>
     </stackversion>
-    <questionvariables>
-      <text>/*Please modify the ta as the expected answer.(true or false*/
-ta:false</text>
+    <questionvariables><text><![CDATA[randNum: rand(3)+1;
+var1:["This is text1","This is text2", "This is text3"]
+ansList :[false,true,false]
+ta:ansList[randNum]
+]]></text>
     </questionvariables>
     <specificfeedback format="html">
       <text>[[feedback:prt1]]</text>
     </specificfeedback>
-    <questionnote>
-      <text></text>
+    <questionnote><text>{@randNum@}</text>
     </questionnote>
     <questionsimplify>1</questionsimplify>
     <assumepositive>0</assumepositive>
