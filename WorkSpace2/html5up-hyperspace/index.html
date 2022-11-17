@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.hidden{
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Definition</a></li>
+							<li><a href="#one">Demo</a></li>
+							<li><a href="#two">Create a question</a></li>
+							<li><a href="#three">Upload to Moodle</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Simple Calculation question</h1>
+							<p>Answer type is a mathematical expression or a number.</p>
+							<p>Two categories in this question:</p>
+							<ol>
+								<li>question without variants</li>
+								<li>question with variants</li>
+							</ol>
+
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn about two categories with demo</a></li>
+								<li><a href = "#two"class="button scrolly ">Create question now</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Question without variants</h2>
+									<p>Student get question in the same type.</p>
+									<ul class="actions">
+										<li><a class="button demoTrigger" >Learn From a demo here</a></li>
+									</ul>
+								</div>
+							</div>
+							<a  class="image"><img src="./1.png" alt="" data-position=" top center"  /></a>
+						</section>
+						<!-- 提示 -->
+						<section style="display:none" class = "demoOperator">
+							<div class="content" style ="width: 100%;">
+								<div class=" inner ">
+									<h1>Demo: An addition question</h1>
+
+									<div class = "row">
+
+									<div  class="col-4 ">
+										<h4>Procedures:</h4>
+										<ol style="margin: auto;">
+											<li>Keep variable setting as Unable</li>
+											<li>Insert <strong> Question title</strong>, <strong> Question text</strong> and <strong> Question answer</strong>in related box</li>
+										</ol>
+									</div>
+								
+									<div class = "col-5" >
+										<h4>Panel setting</h4>
+										<img src="./3.png"  alt=""  style="display:block;  width: 400px; " >
+
+									</div>
+
+									<div class = "col-3" >
+										<h4>Expected output</h4>
+										<img src="./4.png"  alt=""  style="display:block;  width: 100%;" >
+
+									</div>
+
+
+
+									<!-- <div class = "col- 4"><a  class="button">Previous step</a></div> -->
+									<div class = "col- 4"><a  class="button primary demoHidder">Hide Demo</a></div> 
+									<div class = "col- 4"><a href = "#two"class="button primary scrolly">Create question now</a></div>
+								</div>
+									
+								</div>
+							</div>
+						</section>
+						
+						
+
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Question with variants</h2>
+									<p>Student will get question with different variants.</p>
+									<ul class="actions">
+										<li><a class="button demoTrigger" >Learn From a demo here</a></li>
+									</ul>
+								</div>
+							</div>
+							<a class="image"><img src="./2.png" alt="" data-position="top center" style="display: block;"/></a>
+						</section>
+						<!-- //step 1 点击variable setting 为Enable
+						//step 2 设置一些变量, 1,2 放一张
+						// step 3 使用变量填写3项，注意： 1. 可以使用基本运算符； 2. 在涉及运算时question text需要用{@@}括起来， questionanswer不需要
+						// step 4 complete demo -->
+						
+						<section style="display:none" class = "demoOperator slide ">
+							<div class="content" style ="width: 100%;">
+								<div class=" inner ">
+									<h1>Demo: An addition question</h1>
+
+									<div class = "row">
+
+									<div  class="col-4 ">
+										<h2>Procedures:</h2>
+										<h4>
+											1. Step <strong>variable setting</strong> as Enable.
+										</h4>
+										<h4>
+											2. Fill the Variable List
+										</h4>
+									</div>
+								
+									<div class = "col-7" >
+										
+										<img src="./5.png"  alt=""  style="display:block;  width: 1350px; " >
+
+									</div>
+
+								<div class = "col- 4"><a  class="button primary demoHidder">Hide Demo</a></div> 
+									<div class = "col- 4"><span class="button primary disabled">Previous step</span></div>
+									<div class = "col- 4"><span class="button primary nextSlide">Next Step</span></div>
+								</div>
+									
+								</div>	
+							</div>
+						</section>
+						
+						<section style="display:none" class = "slide demoOperator">
+							<div class="content" style ="width: 100%;">
+								<div class=" inner ">
+									<div class = "row">
+
+									<div  class="col-4 ">
+										<h2>Procedures:</h2>
+										<h4>
+											3. Fill <strong>question text</strong> and <strong>question answer</strong> with variables.
+										</h4>
+										<h4>
+											In question text, Include variables and math operators with <code>{@ @}</code>, no need in question answer. (See demo on the right)
+										</h4>
+									</div>
+								
+									<div class = "col-7" >
+										<img src="./6.png"  alt=""  style="display:block;  width: 1300px; " >
+
+									</div>
+
+									<div class = "col- 4"><a  class="button primary demoHidder">Hide Demo</a></div> 
+									<div class = "col- 4"><span class="button primary preSlide">Previous step</span></div>
+									<div class = "col- 4"><span class="button primary nextSlide">Next Step</span></div>
+								</div>
+									
+								</div>	
+							</div>
+						</section>
+						
+						<section style="display:none" class = "slide demoOperator">
+							<div class="content" style ="width: 100%;">
+								<div class=" inner ">
+									<div class = "row">
+
+									<div  class="col-4 ">
+										<h2>Procedures:</h2>
+											<h4>4. After finish all, click "generate xml file" to get an xml file, further instruction will be shown.</h4>	
+									</div>
+								
+									<div class = "col-7" >
+										<img src="./8.png"  alt=""  style="display:block;  width: 1300px; " >
+
+									</div>
+
+									<div class = "col- 4"><a  class="button primary demoHidder">Hide Demo</a></div> 
+									<div class = "col- 4"><span class="button primary preSlide">Previous step</span></div>
+									<div class = "col- 4"><span class="button primary nextSlide">Next Step</span></div>
+								</div>
+									
+								</div>	
+							</div>
+						</section>
+
+						<section style="display:none" class = "slide demoOperator">
+							<div class="content" style ="width: 100%;">
+								<div class=" inner ">
+									<h2 >Whole structure of the question</h2>
+
+									<div class = "row">
+									<!-- <div  class="col-3 ">
+										<h4>After finish all, click generate xml file to get a xml file</h4>
+									</div> -->
+
+									<div class = "col-12" >
+										<img src="./7.png"  alt=""  style="display:block;  width: 1800px; " >
+
+									</div>
+
+									<div class = "col- 4"><a  class="button primary demoHidder">Hide Demo</a></div> 
+									<div class = "col- 4"><span class="button primary preSlide">Previous step</span></div>
+									<div class = "col- 4"><span class="button primary disabled">Next Step</span></div>
+									<div class = "col- 4"><a href = "#two"class="button primary scrolly">Create question now</a></div>
+								</div>
+									
+								</div>	
+							</div>
+						</section>
+
+
+
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+
+							<h1>Question panel</h1>
+							
+							<div class="row" >
+								<h3 class = "col-12">Start question with demo template?</h3>
+
+								<div class="col-4 col-12-small">
+									<input type="radio"  id = "pannel-2" name="setPannel" value = "demo" onclick="enableWriter()" checked>
+									<label for="pannel-2" name ="setPannel" >Yes</label>
+								</div>
+
+								<div class="col-6 col-12-small">
+									<input type="text" value = "0" id = "variable" style="display: none;">
+									<input type="radio" id = "pannel-1" name="setPannel" value = "blank" onclick="unableWriter()" >
+									<label for="pannel-1" name ="setPannel"  >No</label>
+								</div>
+
+								
+
+							</div>
+							<form method="post" action="#">
+								<div class="row gtr-uniform">
+
+									<div class="col-6 col-12-xsmall">
+										<h3>Question Title</h3>
+										<input type="text" name="demo-name" id="question title" value="Sample question" placeholder="Question title" />
+									</div>
+									
+									<h3 class="col-8">Variable Setting</h3>
+									<div class="col-6 col-12-small">
+										<input type="radio" id="demo-priority-low" name="setVariable" value = "Disable" onclick="disableHidden()" checked>
+										<label for="demo-priority-low" name ="setVariable"  >Unable</label>
+									</div>
+
+									<div class="col-4 col-12-small">
+										<input type="radio" id="demo-priority-normal" name="setVariable" value = "Enable" onclick="enableHidden()">
+										<label for="demo-priority-normal" name ="setVariable" >Enable</label>
+									</div>
+									
+									<h3 class="col-8 hidden" >Variable List</h3>
+									<div class="table-wrapper col-10 hidden">
+										<table id="PTable"   class=" form-control validate" >
+                                        <thead>
+                                          <tr>
+                                            <th style = "text-align: center;"><a class="button primary small add">Add</a> </th>
+                                            <th>Variable Name</th>
+                                            <th>Variable Lower Bound</th>
+                                            <th>Variable Upper Bound</th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody><tr>
+                                            <td style="text-align: center;">
+												<a class="button primary small delete">Delete</a></td>
+                                            <td><input type="text"   ></td>
+                                            <td><input type="text" class = "tNum"   onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>
+                                            <td><input type="text"  class = "tNum"  onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>        
+                                          </tr><tr>
+                                            <td style="text-align: center;">
+												<a class="button primary small delete">Delete</a></td>
+                                            </td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" class = "tNum"  onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>
+                                            <td><input type="text"  class = "tNum"  onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>
+                                            
+                                          </tr><tr class = "hidden" >
+                                            <td style="text-align: center;">
+												<a class="button primary small delete">Delete</a></td>
+                                            </td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" class = "tNum"  onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>
+                                            <td><input type="text"  class = "tNum"  onkeyup="value=value.replace(/[^(\d)]/g,'')"/></td>
+											</tr></tbody>
+                                    	</table>
+										<!-- <div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="Undo" class="primary" /></li>
+												<li><input type="reset" value="Reset" /></li>
+											</ul>
+										</div> -->
+									</div>
+									
+									<h3 class="col-3">Question Text</h3><p class = "hidden col-6">Include variable name in<strong>{@ @}</strong>(eg. {@var1@}) </p>
+									<div class="col-12">
+										<textarea name="demo-message" id="question text" placeholder="Enter question Text here" rows="6" >Given 15 and 17, please give a result after addition: </textarea>
+									</div>
+
+									<h3 class="col-3">Question Answer</h3><p class = "hidden col-7" >Allowed operators: +, -, *, /, lg, ln, ^</p>
+									<div class="col-12">
+										<input type="text" name="demo-name" id="question answer" value="32" placeholder="Question answer" />
+									</div>
+
+									
+									<div class="col-12">
+										<a  href = "#three"class="button primary fit scrolly" id = "confirm">Generate XML file for question</a>
+									</div>
+									
+								</div>
+
+							</form>
+						</div>
+
+							
+						
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>A question in xml file is successfully created. </h2>
+							<h2>Now please conduct following steps to import it to the question bank:</h2>
+							<p> </p>
+							<div class="split style1">
+								<section>
+									<div id = "importHint">
+      
+										<p class = "guide" >1. The question has been created and downloaded in a xml file.</p>
+										<img src = "./Imgs/simpCalcImg/xmlFile.png" style="height: 50px;">
+										<p class = "guide" >2. Then enter the setting page of the quiz you want to add, and click import.</p>
+										<img src = "./Imgs/simpCalcImg/import.png" style="height: 300px;">
+										<p class = "guide" >3. Select your newly created file, and the category you want to place, then import.</p> 
+										<img src = "./Imgs/simpCalcImg/import2.png"  style="height: 300px;">					  
+										<p class = "guide" >4. Then you can find the question in question bank.</p>
+										<img src = "./Imgs/simpCalcImg/check.png"  style="height: 300px;">
+									</div>
+								</section>
+								<section>
+									
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="basic.js"></script>
+			<script src = "../../XMLTemplate/Main/subPages/src/xmlReader.js"></script>
+			<script src = "../../XMLTemplate/Main/subPages/src/FileSaver.js"></script>
+			<script src = "../../XMLTemplate/Main/subPages/src/tools.js"></script>
+			<script>
+				//write things:
+				
+					let variable = document.getElementById("variable").value;
+					// document.getElementById("question text").value = "Given {@var1@} and {@var2@} please give a result after addition:";
+      				// document.getElementById("question answer").value = "var1+var2";
+					// document.getElementsByTagName("table")[0]
+				function unableWriter(){
+					value = 0;
+					document.getElementById("question title").value = "";
+					document.getElementById("question text").value = "";
+      				document.getElementById("question answer").value = "";
+				}
+				function enableWriter(){
+					value = 1;
+					let ident = $("input[name = 'setVariable']:checked").val();
+					if(ident == "Enable"){
+						document.getElementById("question title").value = "Sample question"
+						document.getElementById("question text").value = "Given {@var1@} and {@var2@} please give a result after addition:";
+						document.getElementById("question answer").value = "var1+var2";
+
+
+
+
+						let trs =document.getElementById("PTable").childNodes[3].childNodes;
+						//添加对table是否够2行
+						
+						let inputs = trs[0].getElementsByTagName("input");
+						inputs[0].value ="var1" ;
+						inputs[1].value = "10";
+						inputs[2].value ="20" ;
+
+						 inputs = trs[1].getElementsByTagName("input");
+						inputs[0].value ="var2" ;
+						inputs[1].value = "20";
+						inputs[2].value ="30" ;
+
+						for(let i = 3;i<trs.length;i++){
+							var parentTbody = trs[i].parentNode;
+							parentTbody.removeChild(trs[i]);
+						}
+				}
+				else{
+						document.getElementById("question title").value = "Sample question";
+						document.getElementById("question text").value = "Given 15 and 17, please give a result after addition:";
+      					document.getElementById("question answer").value = "32";
+				}
+
+				}
+					
+			
+
+
+				//是否显示variable list
+// 前置：有radio name 为setVariable ,
+// 设置onClick 分别调用enableList（）,和disableList
+				var elements = document.getElementsByClassName("hidden");
+				function enableHidden(){
+					let ident = $("input[name = 'setPannel']:checked").val();
+					if(ident == "demo"){
+						enableWriter();
+					}
+					let table2 = document.getElementById("PTable");
+					
+
+					for(var i= 0; i<elements.length;i++){
+						elements[i].style.display = "block";
+					}
+
+					table2.style.display="table";
+
+					var hiddenTableRow = document.getElementsByTagName("table")[0].getElementsByClassName("hidden");
+					
+
+					hiddenTableRow[0].style.display="none";
+
+					for( let j = 1;j< hiddenTableRow.length;j++){
+						hiddenTableRow[j].style.display="table-row";
+					}
+				}
+
+				
+
+				function disableHidden(){
+					// let ident = $("input[name = 'setVariable']:checked").val();
+					let ident = $("input[name = 'setPannel']:checked").val();
+					if(ident == "demo"){
+						enableWriter();
+					}
+
+					for(var i= 0; i<elements.length;i++){
+						elements[i].style.display = "none";
+					}
+					
+
+					}
+
+					//加载xml
+					//------------------------------------------------加载XML
+					xmlDoc = getXMLDOM("questions-test-FillinBlankQ-SimpleCalc-20221012-1652.xml");
+					let confirm = document.getElementById("confirm")
+					confirm.onclick = function () {
+					var ident = $("input[name = 'setVariable']:checked").val();
+				
+						let questionText = document.getElementById("question text");
+						let questionAns = document.getElementById("question answer");
+						let questionTitle = document.getElementById("question title");
+						let questionVariableContent = "";
+						let questionNoteContent = "{@ta@}";
+						let questionNum = -1;
+						// let xmlImportGuide = document.getElementById("xmlImportGuide");
+						questionTextContent = questionText.value;
+						questionAnsContent = questionAns.value;
+						questionTitleContent = questionTitle.value;
+
+					if (ident == "Disable") {
+					}
+					else {
+						// questionNum = parseInt(document.getElementById("02Num").value);
+						let tData = getTableContent("PTable");
+						let variableNum = tData.length;
+						for (let i = 1; i < variableNum-1; i++) {
+						questionVariableContent += tData[i][1] +": "+ tData[i][2]+"+ "+ "rand("+(parseInt(tData[i][3])-parseInt(tData[i][2]))+");\n";
+						questionNoteContent += "{@"+tData[i][1]+"@} "
+					}
+					}
+					questionVariableContent += "ta : "+questionAnsContent;
+				//xmlDoc 修改
+					xmlDoc.getElementsByTagName("text")[0].childNodes[0].nodeValue = questionTitleContent;
+					xmlDoc.getElementsByTagName("text")[1].childNodes[0].nodeValue = "<![CDATA[<p></p><p>" + questionTextContent + "</p><p>[[input:ans1]] [[validation:ans1]]</p>";
+					xmlDoc.getElementsByTagName("questionvariables")[0].childNodes[0].childNodes[0].nodeValue = questionVariableContent;
+					xmlDoc.getElementsByTagName("questionnote")[0].childNodes[0].childNodes[0].nodeValue = questionNoteContent;
+
+					let str = getSerialXML(xmlDoc);
+					let reg = new RegExp("<text/>","g");
+					str = str.replace(reg,"<text></text>");
+					if(questionNum!=-1){
+						var variantStr = getRandomStr(parseInt(questionNum));
+						reg = new RegExp("</question>","g");
+						str = str.replace(reg,variantStr+"</question>");
+					}
+
+					let fileName = questionTitleContent+".xml";
+					// let importHint = document.getElementById("importHint");
+					// importHint.style.display="block";
+
+
+					xmlDownload(str,fileName);
+					}
+
+
+
+			//轮播图
+			function nextPage(e) {
+				let btn = e.currentTarget;
+				
+			}
+			function previousPage(e) {
+				let btn = e.currentTarget;
+				
+			}
+			</script>
+		
+
+	</body>
+</html>
